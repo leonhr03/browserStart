@@ -118,7 +118,7 @@
       if (!link.url) {
         return `<span class="tile tile--inactive" title="Bisher ohne Link">${inner}</span>`;
       }
-      return `<a class="tile" href="${link.url}" target="_blank" rel="noopener noreferrer">${inner}</a>`;
+      return `<a class="tile" href="${link.url}" rel="noopener noreferrer">${inner}</a>`;
     }).join('');
   };
 
