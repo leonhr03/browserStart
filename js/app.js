@@ -144,7 +144,7 @@
         const initial = escapeHtml((link.name.charAt(0) || '?').toUpperCase());
         return (
           `<div class="tile tile--quick">` +
-          `<a class="tile tile--quick-anchor" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(link.url)}">` +
+          `<a class="tile tile--quick-anchor" href="${escapeHtml(link.url)}" title="${escapeHtml(link.url)}">` +
           `<span class="tile-avatar" style="background:${quickColor(link.name)}">${initial}</span>` +
           `<span class="tile-name">${escapeHtml(link.name)}</span>` +
           `</a>` +
@@ -277,8 +277,7 @@
     const q = searchInput.value.trim();
     if (!q) return;
     const build = SEARCH_URLS[engineEl.value];
-    window.open(build ? build(q) : SEARCH_URLS.google(q), '_blank', 'noopener');
-    searchInput.value = '';
+    window.location.assign(build ? build(q) : SEARCH_URLS.google(q));
   });
 
   btnTheme.addEventListener('click', toggleTheme);
